@@ -1,0 +1,15 @@
+@keyframes sheen {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.animate-element::after {
+  animation: sheen 1s ease-in-out;
+}
+
+.hidden {
+  opacity: 0;
+}

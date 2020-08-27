@@ -1,0 +1,43 @@
+header {
+  background: rgb(4, 61, 68);
+  background-image: linear-gradient(
+      135deg,
+      rgba(9, 88, 94, 0.6) 0%,
+      rgba(43, 79, 121, 0.8) 100%
+    ),
+    url(/images/beach5.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 67px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: $color--light;
+  padding: 1em 2em;
+  height: 80vh;
+
+  &__title {
+    font-family: $font-serif;
+    font-size: clamp(2.4rem, 2.5vw, 3.6rem);
+  }
+
+  &__subtitle {
+    font-family: $font-serif;
+    font-size: clamp(4.8rem, 4vw, 7.2rem);
+  }
+
+  &__description {
+    margin-top: 1em;
+    width: clamp(3ch, 80vw, 50ch);
+    font-size: map-get($font--size, small);
+  }
+
+  & .button {
+    margin-top: 3em;
+    width: clamp(150px, 20vw, 200px);
+  }
+}

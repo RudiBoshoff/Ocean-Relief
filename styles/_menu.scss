@@ -1,0 +1,102 @@
+.menu {
+  padding: 1em;
+  height: 100%;
+}
+
+.bar {
+  height: 3px;
+  width: 25px;
+  display: block;
+  background-color: $color--dark;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    height: 3px;
+    width: 25px;
+    display: block;
+    position: absolute;
+    background-color: $color--dark;
+  }
+
+  &::before {
+    transform: translateY(-8px);
+  }
+
+  &::after {
+    transform: translateY(8px);
+  }
+}
+
+.close .bar {
+  visibility: hidden;
+  &::before {
+    visibility: visible;
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    visibility: visible;
+    transform: rotate(-45deg);
+  }
+}
+
+.navigation {
+  position: relative;
+  z-index: 200;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  position: fixed;
+  @include flexCenter;
+  flex-wrap: wrap;
+  padding: 1em 0;
+  border-bottom: 1px solid black;
+  background-color: $color--light;
+
+  &__links {
+    @include flexCenter(column, space-between);
+    width: 100%;
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &__link {
+    position: relative;
+    padding: 1em 0;
+    width: 100%;
+    text-align: center;
+    &:hover {
+      background-color: $color--accent;
+    }
+
+    &--active::after {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: $color--accent;
+      left: 50%;
+      bottom: 5px;
+      transform: translateX(-50%);
+    }
+    &--active:hover::after {
+    }
+  }
+}
+
+.logo {
+  width: calc(90vw - 2em);
+  padding: 0.5em 1em;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  &:hover {
+    cursor: pointer;
+  }
+}

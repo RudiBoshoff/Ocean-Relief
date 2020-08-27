@@ -1,0 +1,104 @@
+.attractions {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1em 2em;
+  text-align: center;
+
+  &__title {
+    margin-top: 2em;
+    font-family: $font-serif;
+    font-size: map-get($font--size, medium);
+  }
+
+  &__subtitle {
+    font-family: $font-serif;
+    font-size: map-get($font--size, x-large);
+    margin-bottom: 0.6em;
+  }
+
+  &__description {
+    width: clamp(30ch, 80vw, 70ch);
+    font-size: map-get($font--size, small);
+    margin: 0 auto;
+  }
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1920px;
+    margin: 3em auto 0;
+
+    & .card:first-child {
+      background: rgb(4, 61, 68);
+      background-image: linear-gradient(
+          135deg,
+          rgba(9, 88, 94, 0.6) 0%,
+          rgba(43, 79, 121, 0.8) 100%
+        ),
+        url(/images/dolphin.jpeg);
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    & .card:nth-child(2) {
+      background: rgb(4, 61, 68);
+      background-image: linear-gradient(
+          135deg,
+          rgba(9, 88, 94, 0.6) 0%,
+          rgba(43, 79, 121, 0.8) 100%
+        ),
+        url(/images/spa.jpg);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    & .card:last-child {
+      background: rgb(4, 61, 68);
+      background-image: linear-gradient(
+          135deg,
+          rgba(9, 88, 94, 0.6) 0%,
+          rgba(43, 79, 121, 0.8) 100%
+        ),
+        url(/images/beach2.jpg);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .card {
+    flex: 1 1 300px;
+    margin: 0 1em 1em 0;
+    color: $color--light;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__icon {
+      color: $color--accent;
+      margin-top: 5rem;
+      font-size: map-get($font--size, large);
+      &--large {
+        font-size: map-get($font--size, large);
+      }
+    }
+
+    &__title {
+      text-transform: capitalize;
+      margin: 0.5em 0;
+      font-size: map-get($font--size, large);
+    }
+
+    &__description {
+      font-size: map-get($font--size, small);
+      width: clamp(25ch, 60vw, 40ch);
+    }
+    .button {
+      margin: 3em 0;
+      width: 150px;
+    }
+  }
+}

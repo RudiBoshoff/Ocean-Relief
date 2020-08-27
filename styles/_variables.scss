@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200;400;600;800&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&display=swap");
+
+$color--dark: rgb(36, 36, 36);
+$color--light: rgb(255, 255, 255);
+
+// $color--accent: rgb(247, 186, 107);
+
+// $color--accent: rgb(82, 223, 187);
+
+// beach sand
+$color--accent: #e9cdad;
+
+// Wheat
+// $color--accent: #f5deb3;
+
+$font-sans-serif: "Mulish", sans-serif;
+$font-serif: "Lora", serif;
+
+@mixin flexCenter($direction: row, $spacing: center) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: $spacing;
+}
+
+$font--size: (
+  "small": 1.8rem,
+  "medium": 2.4rem,
+  "large": 3.6rem,
+  "x-large": 4.8rem,
+  "xx-large": 7.2rem,
+);

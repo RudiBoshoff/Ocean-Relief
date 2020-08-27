@@ -1,0 +1,401 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200;400;600;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: sans-serif;
+  color: #242424;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.button {
+  font-family: "Lora", serif;
+  letter-spacing: 1px;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+  padding: 0.8em 1em;
+  border-radius: 15px;
+  border: 1px solid white;
+  color: #242424;
+  text-align: center;
+  width: 50%;
+}
+
+.button span {
+  position: relative;
+  z-index: 100;
+}
+
+.button--primary {
+  background-color: #e9cdad;
+  border: 1px solid transparent;
+}
+
+.button--primary:hover::after {
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-animation: sheen 1s;
+          animation: sheen 1s;
+}
+
+.button--primary::after {
+  content: "";
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  display: block;
+  background: linear-gradient(0.3turn, #e9cdad 40%, white 70%, #e9cdad 90%);
+}
+
+.menu {
+  padding: 1em;
+  height: 100%;
+}
+
+.bar {
+  height: 3px;
+  width: 25px;
+  display: block;
+  background-color: #242424;
+  position: relative;
+}
+
+.bar::before, .bar::after {
+  content: "";
+  height: 3px;
+  width: 25px;
+  display: block;
+  position: absolute;
+  background-color: #242424;
+}
+
+.bar::before {
+  -webkit-transform: translateY(-8px);
+          transform: translateY(-8px);
+}
+
+.bar::after {
+  -webkit-transform: translateY(8px);
+          transform: translateY(8px);
+}
+
+.close .bar {
+  visibility: hidden;
+}
+
+.close .bar::before {
+  visibility: visible;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.close .bar::after {
+  visibility: visible;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.navigation {
+  position: relative;
+  z-index: 200;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 1em 0;
+  border-bottom: 1px solid black;
+  background-color: white;
+}
+
+.navigation__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.navigation__links--hidden {
+  display: none;
+}
+
+.navigation__link {
+  position: relative;
+  padding: 1em 0;
+  width: 100%;
+  text-align: center;
+}
+
+.navigation__link:hover {
+  background-color: #e9cdad;
+}
+
+.navigation__link--active::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #e9cdad;
+  left: 50%;
+  bottom: 5px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.logo {
+  width: calc(90vw - 2em);
+  padding: 0.5em 1em;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+header {
+  background: #043d44;
+  background-image: linear-gradient(135deg, rgba(9, 88, 94, 0.6) 0%, rgba(43, 79, 121, 0.8) 100%), url(/images/beach5.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 67px;
+}
+
+.hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+  padding: 1em 2em;
+  height: 80vh;
+}
+
+.hero__title {
+  font-family: "Lora", serif;
+  font-size: clamp(2.4rem, 2.5vw, 3.6rem);
+}
+
+.hero__subtitle {
+  font-family: "Lora", serif;
+  font-size: clamp(4.8rem, 4vw, 7.2rem);
+}
+
+.hero__description {
+  margin-top: 1em;
+  width: clamp(3ch, 80vw, 50ch);
+  font-size: 1.8rem;
+}
+
+.hero .button {
+  margin-top: 3em;
+  width: clamp(150px, 20vw, 200px);
+}
+
+.attractions {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1em 2em;
+  text-align: center;
+}
+
+.attractions__title {
+  margin-top: 2em;
+  font-family: "Lora", serif;
+  font-size: 2.4rem;
+}
+
+.attractions__subtitle {
+  font-family: "Lora", serif;
+  font-size: 4.8rem;
+  margin-bottom: 0.6em;
+}
+
+.attractions__description {
+  width: clamp(30ch, 80vw, 70ch);
+  font-size: 1.8rem;
+  margin: 0 auto;
+}
+
+.attractions .cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 1920px;
+  margin: 3em auto 0;
+}
+
+.attractions .cards .card:first-child {
+  background: #043d44;
+  background-image: linear-gradient(135deg, rgba(9, 88, 94, 0.6) 0%, rgba(43, 79, 121, 0.8) 100%), url(/images/dolphin.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.attractions .cards .card:nth-child(2) {
+  background: #043d44;
+  background-image: linear-gradient(135deg, rgba(9, 88, 94, 0.6) 0%, rgba(43, 79, 121, 0.8) 100%), url(/images/spa.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.attractions .cards .card:last-child {
+  background: #043d44;
+  background-image: linear-gradient(135deg, rgba(9, 88, 94, 0.6) 0%, rgba(43, 79, 121, 0.8) 100%), url(/images/beach2.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.attractions .card {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 300px;
+          flex: 1 1 300px;
+  margin: 0 1em 1em 0;
+  color: white;
+  padding: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.attractions .card__icon {
+  color: #e9cdad;
+  margin-top: 5rem;
+  font-size: 3.6rem;
+}
+
+.attractions .card__icon--large {
+  font-size: 3.6rem;
+}
+
+.attractions .card__title {
+  text-transform: capitalize;
+  margin: 0.5em 0;
+  font-size: 3.6rem;
+}
+
+.attractions .card__description {
+  font-size: 1.8rem;
+  width: clamp(25ch, 60vw, 40ch);
+}
+
+.attractions .card .button {
+  margin: 3em 0;
+  width: 150px;
+}
+
+@-webkit-keyframes sheen {
+  from {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes sheen {
+  from {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+.animate-element::after {
+  -webkit-animation: sheen 1s ease-in-out;
+          animation: sheen 1s ease-in-out;
+}
+
+.hidden {
+  opacity: 0;
+}
+/*# sourceMappingURL=style.css.map */
